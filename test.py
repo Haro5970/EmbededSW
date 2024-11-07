@@ -8,7 +8,7 @@ clock = pg.time.Clock()
 # player = (x,y)
 camera = Camera()
 map = Map("map0.json")
-player = Player()
+player = Player(map,[Enemy(map,[60,300])])
 player.pos = map.playerStartPos
 
 def step():
@@ -17,31 +17,24 @@ def step():
         if event.type == pg.KEYDOWN:
             if event.key == pg.K_w:
                 player.jumpKey()
-            if event.key == pg.K_e:
-                player.rotateRight()
-            if event.key == pg.K_q:
-                player.rotateLeft()
+            if event.key == pg.K_SPACE:
+                player.shootKey()
+        if event.type == pg.KEYUP:
+            if event.key == pg.K_s:
+                player.target = [0]
+                player.target_vel = numpy.zeros(2)
+
     if pg.key.get_pressed()[pg.K_a]:
         player.leftKey()
     if pg.key.get_pressed()[pg.K_d]:
         player.rightKey()
+    if pg.key.get_pressed()[pg.K_s]:
+        player.pullKey()
 
-    view = map.getView()
-
-    # 플레이어 빨간색 사각형 (x-5,y-10,x+5,y+10)
-    view[int(player.pos[0]-player.size[0]):int(player.pos[0]+player.size[0]), int(player.pos[1]-player.size[1]):int(player.pos[1]+player.size[1])] = (255, 0, 0)
-
-    # player pos->theta 방향으로 하얀점 그리기
-    pos = player.pos
-    r=math.radians(player.theta)
-    dotx = pos[0]+math.cos(r)*10
-    doty = pos[1]+math.sin(r)*10
-
-    view[int(dotx)-1:int(dotx)+1, int(doty)-1:int(doty)+1] = (255, 255, 255)
-
-
-    player.move(map.blocks)
-    view = camera.view(player, view) # 240*240*3
+    player.move()
+    for e in player.enemies:
+        e.move()
+    view = camera.view(player, map.getView()) # 240*240*3
     surface = pg.surfarray.make_surface(view)
 
     # player pygame에 출력
@@ -55,6 +48,14 @@ def step():
 running = True
 while running:
     step()
+    step()
+    step()
+    step()
+    step()
+    step()
+    step()
+    step()
+
 
     # 초당 프레임 수
     pg.display.flip()
