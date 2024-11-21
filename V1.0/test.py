@@ -8,7 +8,7 @@ clock = pg.time.Clock()
 # player = (x,y)
 camera = Camera()
 map = Map("map0.json")
-player = Player(map,[Enemy(map,[60,300])])
+player = Player(map,[Enemy(map,e) for e in map.enemies])
 player.pos = map.playerStartPos
 
 def step():
@@ -33,13 +33,14 @@ def step():
 
     player.move()
     for e in player.enemies:
+        e.player_targeting(player)
         e.move()
     view = camera.view(player, map.getView()) # 240*240*3
     surface = pg.surfarray.make_surface(view)
 
     # player pygame에 출력
     font = pg.font.SysFont("arial", 10)
-    text = font.render(f'Pos: {player.pos}   Vel: {player.vel}  Theta: {player.theta}', True, (255, 255, 255))
+    text = font.render(f'Pos: {player.pos}   Vel: {player.vel}  Theta: {player.theta}   Debug: {player.debug}', True, (255, 255, 255))
     surface.blit(text, (0, 0))
 
     screen.blit(surface, (0, 0))

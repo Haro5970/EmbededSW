@@ -4,12 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c519e5d4-5d11-4597-9719-54272a29aa72" name="Changes" comment="11.01">
-      <change afterPath="$PROJECT_DIR$/tile.png" afterDir="false" />
+    <list default="true" id="c519e5d4-5d11-4597-9719-54272a29aa72" name="Changes" comment="11.7">
+      <change afterPath="$PROJECT_DIR$/V1.0/map0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V1.0/t2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V2.0/GameClass.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V2.0/block1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V2.0/block3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V2.0/enemy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V2.0/hook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V2.0/map.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V2.0/player.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V2.0/sub.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class/Camera.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class/Entity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class/Map.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class/Player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map0.json" beforeDir="false" afterPath="$PROJECT_DIR$/map0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/V1.0/GameClass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sub.py" beforeDir="false" afterPath="$PROJECT_DIR$/V1.0/sub.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/V1.0/test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/V1.0/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tile.png" beforeDir="false" afterPath="$PROJECT_DIR$/V1.0/t1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +42,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Haro5970&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Haro5970/EmbededSW.git&quot;,
+    &quot;accountId&quot;: &quot;a9f6f0c6-7228-42d1-b2bd-0855d3429878&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -40,23 +68,38 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.GameClass (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.GameClass (2).executor&quot;: &quot;Run&quot;,
     &quot;Python.GameClass.executor&quot;: &quot;Run&quot;,
     &quot;Python.LadyBug.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sub (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.sub.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/Tetris&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/EmbededSW/V2.0&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\EmbededSW\V2.0" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\EmbededSW\V2.0" />
+      <recent name="C:\Users\user\PycharmProjects\EmbededSW\V1.0" />
       <recent name="C:\Users\user\PycharmProjects\EmbededSW" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.GameClass">
     <configuration name="GameClass" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="EmbededSW" />
       <option name="ENV_FILES" value="" />
@@ -66,11 +109,35 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/V2.0" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GameClass.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/V2.0/GameClass.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sub (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EmbededSW" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/V2.0" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/V2.0/sub.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,11 +155,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/V1.0" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sub.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/V1.0/sub.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -110,11 +178,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/V1.0" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/V1.0/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,16 +194,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.sub" />
         <item itemvalue="Python.GameClass" />
+        <item itemvalue="Python.sub (1)" />
+        <item itemvalue="Python.sub" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-c69650fc56ca-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15619.17" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
+        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
       </set>
     </attachedChunks>
   </component>
@@ -146,6 +217,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729997528702</updated>
+      <workItem from="1731472373665" duration="72000" />
+      <workItem from="1731472464733" duration="250000" />
+      <workItem from="1731472733410" duration="898000" />
+      <workItem from="1731473658534" duration="6410000" />
+      <workItem from="1732164788717" duration="9778000" />
     </task>
     <task id="LOCAL-00001" summary="Github test">
       <option name="closed" value="true" />
@@ -171,13 +247,30 @@
       <option name="project" value="LOCAL" />
       <updated>1730435691248</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="11.7">
+      <option name="closed" value="true" />
+      <created>1730951206976</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730951206976</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Github test" />
     <MESSAGE value="11.01" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.01" />
+    <MESSAGE value="11.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.7" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/EmbededSW$test.coverage" NAME="test 커버리지 결과" MODIFIED="1731855691560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V1.0" />
+    <SUITE FILE_PATH="coverage/EmbededSW$sub__1_.coverage" NAME="sub (1) 커버리지 결과" MODIFIED="1732186217117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V2.0" />
+    <SUITE FILE_PATH="coverage/EmbededSW$GameClass.coverage" NAME="GameClass 커버리지 결과" MODIFIED="1732186420965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V2.0" />
   </component>
 </project>
