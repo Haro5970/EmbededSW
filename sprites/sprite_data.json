@@ -1,0 +1,24 @@
+{
+    "Break1Start": [0,0],
+    "Break1Normal": [1,0],
+    "Break1End": [2,0],
+    "Break1StartBroken": [3,0],
+    "Break1NormalBroken": [4,0],
+    "Break1EndBroken": [5,0],
+
+    "Break2Start": [0,1],
+    "Break2Normal": [1,1],
+    "Break2End": [2,1],
+    "Break2StartBroken": [3,1],
+    "Break2NormalBroken": [4,1],
+    "Break2EndBroken": [5,1],
+
+    "Break3": [6,0],
+    "Break3Broken": [7,0],
+
+    "RayserSmall": [7,1],
+    "RayserBigCorner": [0,2],
+    "RayserBigSide": [1,2],
+    "RayserBigCenter": [1,3]
+
+}
