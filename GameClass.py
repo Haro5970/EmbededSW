@@ -3,8 +3,40 @@ import numpy as np
 import math
 import json
 from PIL import Image, ImageDraw, ImageOps, ImageFont
-import pygame as pg
 import random
+import time
+from colorsys import hsv_to_rgb
+import board
+from gpiozero import Button
+from digitalio import DigitalInOut
+from adafruit_rgb_display import st7789
+
+# 디스플레이 생성
+cs_pin = DigitalInOut(board.CE0)
+dc_pin = DigitalInOut(board.D25)
+reset_pin = DigitalInOut(board.D24)
+BAUDRATE = 24000000  # SPI 통신 속도
+
+spi = board.SPI()
+disp = st7789.ST7789(
+    spi,
+    height=240,
+    y_offset=80,
+    rotation=180,
+    cs=cs_pin,
+    dc=dc_pin,
+    rst=reset_pin,
+    baudrate=BAUDRATE,
+)
+
+# 입력 핀:
+button_A = Button(5)
+button_B = Button(6)
+button_L = Button(27)
+button_R = Button(23)
+button_U = Button(17)
+button_D = Button(22)
+button_C = Button(4)
 
 
 class Entity:
@@ -14,7 +46,7 @@ class Entity:
         self.vel = np.zeros(2, dtype="float64")
         self.image = img_code
 
-    def collision(self, other, priorty = 0):  # 0: no collision, 1: top, 2: bottom, 3: left, 4: right
+    def collision(self, other, priorty=0):  # 0: no collision, 1: top, 2: bottom, 3: left, 4: right
         next_pos = self.pos + self.vel
 
         self_left, self_right = next_pos[0], next_pos[0] + self.size[0]
@@ -98,11 +130,11 @@ class Hook(Entity):
 
     def move(self, blocks, enemies, player):
         if self.isShooting:
-            vel = self.vel/10
+            vel = self.vel / 10
             self.vel[0] = 0
             self.vel[1] = 0
             for i in range(10):
-                self.vel+= vel
+                self.vel += vel
                 self.checkCollision(blocks, enemies, player)
 
         if not self.isStuck:
@@ -244,7 +276,6 @@ class Player(Entity):
             if len(enemies) == 0:
                 self.door.isOpened = True
 
-
     def move(self, blocks, enemies):
         self.checkCollision(blocks, enemies)
 
@@ -253,7 +284,7 @@ class Player(Entity):
 
         self.pos += self.vel
         self.vel[1] += self.GA
-        self.vel[0] -= self.frac*self.heading
+        self.vel[0] -= self.frac * self.heading
         if abs(self.vel[0]) < 0.2:
             self.vel[0] = 0
 
@@ -261,11 +292,11 @@ class Player(Entity):
         self.hook.rotate(self.heading)
 
         # arm pos
-        armPos = self.pos+self.size/2
+        armPos = self.pos + self.size / 2
         # Hook pos
-        hookPos = armPos+ [
-            math.cos(math.radians(self.hook.angle))*12,
-            math.sin(math.radians(self.hook.angle))*12
+        hookPos = armPos + [
+            math.cos(math.radians(self.hook.angle)) * 12,
+            math.sin(math.radians(self.hook.angle)) * 12
         ]
         self.hook.toPos(hookPos)
 
@@ -292,7 +323,7 @@ class Enemy(Entity):
         for block in blocks:
             if block.effect == 3:
                 continue
-            collision = self.collision(block,1)
+            collision = self.collision(block, 1)
             if collision:
                 if collision == 1:
                     self.vel[1] = 0
@@ -339,7 +370,7 @@ class Enemy(Entity):
             pos = self.player.pos
             # player와의 거리가 100 이하일 때
             if np.linalg.norm(pos - self.pos) < 100:
-                if pos[0] > self.pos[0]: # if player is right
+                if pos[0] > self.pos[0]:  # if player is right
                     self.heading = 1
                 else:
                     self.heading = -1
@@ -386,12 +417,16 @@ class Map:
 
         self.enemyList = [Enemy(e[:2], "enemy", self.player, e[2]) for e in map["enemies"]]
         for e in self.enemyList:
-            e.img += 8*random.randint(0,3)
+            e.img += 8 * random.randint(0, 3)
         self.imageCodeTable = {}
 
         self.GameState = 0  # 0: 게임중, 1: 게임오버 2: 게임클리어
 
         self.bg = Image.open("src/map" + map_name[4:-5] + ".png").convert("RGB")
+
+        global button_A, button_B, button_L, button_R, button_U, button_D, button_C
+        button_A.when_pressed = self.player.jump
+        button_B.when_pressed = self.player.shot
 
     def MakeImageCode(self):
         # 각 이미지 RGBA 로 로드
@@ -400,10 +435,13 @@ class Map:
         keys = sorted(data.keys())
         for i in range(len(keys)):
             if len(data[keys[i]]) == 2:
-                self.imageCodeTable[str(i + 1)+'0'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA")
-                self.imageCodeTable[str(i + 1)+'1'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(90)
-                self.imageCodeTable[str(i + 1)+'2'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(180)
-                self.imageCodeTable[str(i + 1)+'3'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(270)
+                self.imageCodeTable[str(i + 1) + '0'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA")
+                self.imageCodeTable[str(i + 1) + '1'] = Image.open("sprites/" + keys[i] + ".png").convert(
+                    "RGBA").rotate(90)
+                self.imageCodeTable[str(i + 1) + '2'] = Image.open("sprites/" + keys[i] + ".png").convert(
+                    "RGBA").rotate(180)
+                self.imageCodeTable[str(i + 1) + '3'] = Image.open("sprites/" + keys[i] + ".png").convert(
+                    "RGBA").rotate(270)
 
         self.imageCodeTable['player0'] = Image.open("src/player0.png").convert("RGBA")
         self.imageCodeTable['player1'] = Image.open("src/player1.png").convert("RGBA")
@@ -444,7 +482,7 @@ class Map:
             [int(w) for w in self.door.pos],
             self.imageCodeTable[self.door.image]
         )
-        
+
         # 적
         for enemy in self.enemyList:
             # 화면에 안나오는 적 pass
@@ -462,11 +500,10 @@ class Map:
                            [int(w) for w in enemy.pos],
                            enemyImg)
 
-
         # 플레이어
         playerImg = self.imageCodeTable[
-            self.player.image + str( (self.player.img//8)%4 )
-        ].copy() if self.player.isAttacked == 0 else self.imageCodeTable['playerD'].copy()
+            self.player.image + str((self.player.img // 8) % 4)
+            ].copy() if self.player.isAttacked == 0 else self.imageCodeTable['playerD'].copy()
         if self.player.heading == -1:
             playerImg = ImageOps.mirror(playerImg)
 
@@ -474,7 +511,6 @@ class Map:
                    [int(w) for w in self.player.pos],
                    playerImg)
 
-        
         hook = self.player.hook
         draw.line([int(w) for w in self.player.pos + self.player.size / 2] + [int(w) for w in hook.pos + hook.size / 2],
                   fill=(200, 200, 200), width=3)
@@ -486,11 +522,12 @@ class Map:
                    hookimg)
 
         view = view.crop((int(cameraPos[0]), int(cameraPos[1]), int(cameraPos[0] + 240), int(cameraPos[1] + 240)))
-        view = ImageOps.mirror(view)
-        view = view.rotate(90)
+        if view.size != (240, 240):
+            print(cameraPos)
         return view
 
     def inputKey(self):
+        """
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_l:
@@ -504,6 +541,14 @@ class Map:
         elif getKey[pg.K_d]:
             self.player.goRight()
         elif getKey[pg.K_s]:
+            self.player.pull()
+        """
+
+        if button_L.is_pressed:
+            self.player.goLeft()
+        if button_R.is_pressed:
+            self.player.goRight()
+        if button_C.is_pressed:
             self.player.pull()
 
     def step(self):
@@ -526,92 +571,61 @@ class Map:
 
         return self.door.isOpened
 
-    def draw(self, screen):
+    def draw(self):
         view = self.getView()
-        surface = pg.surfarray.make_surface(np.array(view))
-        screen.blit(surface, (0, 0))
+        try:
+            disp.image(view)
+        except:
+            print(view.size)
 
 
-def MapPlay_(map_file_name, screen, clock):  # Exit: 0, Restart: -1, win: ticks
+def MapPlay(map_file_name):  # Exit: 0, Restart: -1, win: ticks
     map = Map(map_file_name)
     map.MakeImageCode()
-
-    startTick = pg.time.get_ticks()
 
     for i in range(0, 241, 20):
         # 스크린을 위에서부터 어둡게 하기
         view = map.getView()
         draw = ImageDraw.Draw(view)
-        draw.rectangle([i, 0, 240, 240], fill=(0, 0, 0))
-
-        surface = pg.surfarray.make_surface(np.array(view))
-        screen.blit(surface, (0, 0))
-        pg.display.flip()
-        clock.tick(15)
+        draw.rectangle([0, i, 240, 240], fill=(0, 0, 0))
+        disp.image(view)
+        time.sleep(0.01)
 
     result = 1
     running = True
+    ticks = 0
     while running:
-        for event in pg.event.get():
-            if event.type == pg.QUIT:
-                return 0
-        getKey = pg.key.get_pressed()
-        if getKey[pg.K_w] and getKey[pg.K_l] and getKey[pg.K_w] and startTick + 1000 < pg.time.get_ticks():
-            result = 0
-            break
-        if getKey[pg.K_p] and getKey[pg.K_l] and getKey[pg.K_s] and startTick + 1000 < pg.time.get_ticks():
-            result = -1
-            break
+        ticks += 1
 
         map.step()
         map.step()
         map.step()
         running = not map.step()
-        map.draw(screen)
+        map.draw()
 
-        pg.display.flip()
-        clock.tick(15)
+        time.sleep(0.01)
 
+    view = map.getView()
+    draw = ImageDraw.Draw(view)
     for i in range(0, 241, 20):
         # 스크린을 위에서부터 어둡게 하기
-        # ???
-        pg.draw.rect(screen, (0, 0, 0), (0, 0, 240, i))
-        pg.display.flip()
-        clock.tick(15)
+        draw.rectangle([0, 0, 240, i], fill=(0, 0, 0))
+        disp.image(view)
 
     if result > 0:
-        return pg.time.get_ticks() - startTick
+        return ticks
     else:
         return result
 
 
-def MapPlay(mapNum, screen, clock):
-    while (1):
-        result = MapPlay_("map/" + str(mapNum) + ".json", screen, clock)
-        if result == 0:
-            print("Exit")
-            break
-        elif result == -1:
-            print("Restart")
-        elif result > 0:
-            print("Win")
-            print("Time: ", result)
-            break
-
-        else:
-            print("Error")
-            break
-    return result
-
-
-def GameStart(screen, clock):
+def GameStart():
     # 인트로 영상
     try:
         with open("playdata.json", "r", encoding='utf8') as f:
             playdata = json.load(f)
     except:
         playdata = {}
-        IntroMP4(screen, clock)
+        IntroMP4()
 
     # 배경 이미지 로딩
     bgSrc = Image.open("src/homeBG.png").convert("RGB")
@@ -622,26 +636,44 @@ def GameStart(screen, clock):
     startBtn = (90, 142, 150, 162)
     exitBtn = (90, 175, 150, 195)
 
-    gameStartTick = 0
-    while (1):
-        for event in pg.event.get():
-            if event.type == pg.QUIT:
-                return 0
-            if event.type == pg.KEYDOWN:
-                if event.key == pg.K_s or event.key == pg.K_w:
-                    btnState = 1 - btnState
-                if event.key == pg.K_p:
-                    if btnState == 0 and pg.time.get_ticks() - gameStartTick > 1000:
-                        gameStartTick = pg.time.get_ticks()
-                        # 게임 시작
-                        result = MapPlay(0, screen, clock)
-                        if result > 0:
-                            playdata["clear"] = 1
-                            playdata["time"] = min(playdata["time"],result)
-                            with open("playdata.json", "w", encoding='utf8') as f:
-                                json.dump(playdata, f, ensure_ascii=False, indent="\t")
-                    else:
-                        return
+    def switch():
+        nonlocal btnState
+        btnState = 1 - btnState
+
+    isPlaying = False
+    isExit = False
+
+    def game():
+        if btnState == 1:
+            nonlocal isExit
+            isExit = True
+        else:
+            nonlocal isPlaying
+            isPlaying = True
+
+    while (not isExit):
+
+        button_U.when_pressed = switch
+        button_D.when_pressed = switch
+        button_B.when_pressed = game
+
+        if isPlaying:
+            # 게임 시작
+            print("Game Start")
+            result = MapPlay("map/" + str(0) + ".json")
+            if result > 0:
+                if playdata == {}:  # 첫 플레이
+                    playdata["clear"] = 1
+                    playdata["time"] = result
+                    with open("playdata.json", "w", encoding='utf8') as f:
+                        json.dump(playdata, f, ensure_ascii=False, indent="\t")
+                else:
+                    playdata["clear"] = 1
+                    playdata["time"] = min(playdata["time"], result)
+                    with open("playdata.json", "w", encoding='utf8') as f:
+                        json.dump(playdata, f, ensure_ascii=False, indent="\t")
+            isPlaying = False
+
         # 배경 이미지 그리기
         bg = bgSrc.copy()
         draw = ImageDraw.Draw(bg)
@@ -653,17 +685,13 @@ def GameStart(screen, clock):
             else:
                 draw.rounded_rectangle(exitBtn, outline=(255, 255, 255), width=2, radius=10)
 
-        bg = ImageOps.mirror(bg)
-        bg = bg.rotate(90)
-        bg = np.array(bg)
+        disp.image(bg)
 
-        screen.blit(pg.surfarray.make_surface(bg), (0, 0))
-        pg.display.flip()
         cnt += 1
-        clock.tick(15)
+        time.sleep(0.01)
 
 
-def IntroMP4(screen, clock):
+def IntroMP4():
     imageData = []
     skip = Image.new("RGBA", (240, 240), (0, 0, 0, 0))
     draw = ImageDraw.Draw(skip)
@@ -679,18 +707,15 @@ def IntroMP4(screen, clock):
                 (0, 0),
                 skip
             )
-        imageData.append(ImageOps.mirror(img).rotate(90))
+        imageData.append(img)
 
     # 화면 그리기
     for i in range(0, 77):
         # 만약 keyDown이 있으면 return
-        for event in pg.event.get():
-            if event.type == pg.KEYDOWN:
-                return
+        if button_A.is_pressed or button_B.is_pressed or button_L.is_pressed or button_R.is_pressed or button_U.is_pressed or button_D.is_pressed or button_C.is_pressed:
+            return
 
         # 이미지를 화면에 그리기
         img = imageData[i]
-        img = np.array(img)
-        screen.blit(pg.surfarray.make_surface(img), (0, 0))
-        pg.display.flip()
-        clock.tick(15)
+        disp.image(img)
+        time.sleep(0.01)
