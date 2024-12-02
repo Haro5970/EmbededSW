@@ -4,45 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c519e5d4-5d11-4597-9719-54272a29aa72" name="Changes" comment="v3 11.29">
-      <change afterPath="$PROJECT_DIR$/sprites/Break1End.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break1EndBroken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break1Normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break1NormalBroken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break1Start.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break1StartBroken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break2End.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break2EndBroken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break2Normal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break2NormalBroken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break2Start.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break2StartBroken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/Break3Broken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/RayserBigCenter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/RayserBigCorner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/RayserBigSide.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/RayserSmall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemy0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemy1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemy2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemy3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemyD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/player0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/player1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/player2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/player3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/playerD.png" afterDir="false" />
+    <list default="true" id="c519e5d4-5d11-4597-9719-54272a29aa72" name="Changes" comment="v3 12.02">
       <change beforePath="$PROJECT_DIR$/.idea/EmbededSW.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EmbededSW.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map/0.json" beforeDir="false" afterPath="$PROJECT_DIR$/map/0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spriteToSrc.py" beforeDir="false" afterPath="$PROJECT_DIR$/spriteToSrc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/sprite_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/sprite_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/map0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/player.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +239,7 @@
       <workItem from="1731473658534" duration="6410000" />
       <workItem from="1732164788717" duration="22284000" />
       <workItem from="1732787101905" duration="23167000" />
-      <workItem from="1733131706098" duration="1424000" />
+      <workItem from="1733131706098" duration="1818000" />
     </task>
     <task id="LOCAL-00001" summary="Github test">
       <option name="closed" value="true" />
@@ -323,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732867472056</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="v3 12.02">
+      <option name="closed" value="true" />
+      <created>1733133455929</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733133455929</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +310,8 @@
     <MESSAGE value="11.7" />
     <MESSAGE value="11.21 v2 완성" />
     <MESSAGE value="v3 11.29" />
-    <option name="LAST_COMMIT_MESSAGE" value="v3 11.29" />
+    <MESSAGE value="v3 12.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3 12.02" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EmbededSW$test.coverage" NAME="test 커버리지 결과" MODIFIED="1732370177232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
