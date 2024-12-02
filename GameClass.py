@@ -1,5 +1,3 @@
-from idlelib.iomenu import encoding
-from pprint import pprint
 from typing import List
 import numpy as np
 import math
@@ -16,7 +14,7 @@ class Entity:
         self.vel = np.zeros(2, dtype="float64")
         self.image = img_code
 
-    def collision(self, other):  # 0: no collision, 1: top, 2: bottom, 3: left, 4: right
+    def collision(self, other, priorty = 0):  # 0: no collision, 1: top, 2: bottom, 3: left, 4: right
         next_pos = self.pos + self.vel
 
         self_left, self_right = next_pos[0], next_pos[0] + self.size[0]
@@ -29,8 +27,8 @@ class Entity:
                 distances = {
                     1: abs(self_bottom - other_top),  # top
                     2: abs(self_top - other_bottom),  # bottom
-                    3: abs(self_right - other_left) + 1,  # left
-                    4: abs(self_left - other_right) + 1,  # right
+                    3: abs(self_right - other_left) + priorty,  # left
+                    4: abs(self_left - other_right) + priorty,  # right
                 }
                 return min(distances, key=distances.get)
         return 0
@@ -161,10 +159,10 @@ class Hook(Entity):
 
 class Player(Entity):
     def __init__(self, pos, img_code, hook: Hook, door: Door):
-        super().__init__(pos, [10, 16], img_code)
-        self.speed = (1, 1)
-        self.frac = 0.001
-        self.GA = 0.02
+        super().__init__(pos, [9, 23], img_code)
+        self.speed = (1, 2.2)
+        self.frac = 0.1
+        self.GA = 0.05
 
         self.heading = 1
         self.isAttacked = 0
@@ -174,6 +172,8 @@ class Player(Entity):
         self.hookPullSpeed = 4
 
         self.door = door
+
+        self.img = 0
 
     def goLeft(self):
         if self.isAttacked == 0:
@@ -204,8 +204,8 @@ class Player(Entity):
     def attacked(self, enemy):
         self.isAttacked = 20
         isleft = self.pos[0] - enemy.pos[0] > 0  # enemy가 왼쪽에 있는지
-        self.vel[0] = 5 if isleft else -5
-        self.vel[1] = -0.4
+        self.vel[0] = 1 if isleft else -1
+        self.vel[1] = -1.5
 
     def checkCollision(self, blocks, enemies):
         self.isJumping = 1
@@ -228,7 +228,6 @@ class Player(Entity):
 
                 if block.effect == 3:
                     self.attacked(block)
-
         for enemy in enemies:
             collision = self.collision(enemy)
             if collision:
@@ -245,6 +244,7 @@ class Player(Entity):
             if len(enemies) == 0:
                 self.door.isOpened = True
 
+
     def move(self, blocks, enemies):
         self.checkCollision(blocks, enemies)
 
@@ -253,8 +253,8 @@ class Player(Entity):
 
         self.pos += self.vel
         self.vel[1] += self.GA
-        self.vel[0] *= self.frac
-        if abs(self.vel[0]) < 0.1:
+        self.vel[0] -= self.frac*self.heading
+        if abs(self.vel[0]) < 0.2:
             self.vel[0] = 0
 
         # Hook Spin
@@ -284,11 +284,15 @@ class Enemy(Entity):
 
         self.targetingFunc = targetingWay
 
+        self.img = 0
+
     def checkCollision(self, blocks):
         if self.isDead:
             return
         for block in blocks:
-            collision = self.collision(block)
+            if block.effect == 3:
+                continue
+            collision = self.collision(block,1)
             if collision:
                 if collision == 1:
                     self.vel[1] = 0
@@ -373,15 +377,16 @@ class Map:
         self.door = Door(map["doorPos"], [16, 16], "d")
         self.player = Player(
             map["playerStartPos"],
-            "p",
+            "player",
             Hook([0, 0], "h"),
             self.door
         )
         self.player.hook.player = self.player
         self.player.move(self.blockList, [])
 
-        self.enemyList = [Enemy(e[:2], "e", self.player, e[2]) for e in map["enemies"]]
-
+        self.enemyList = [Enemy(e[:2], "enemy", self.player, e[2]) for e in map["enemies"]]
+        for e in self.enemyList:
+            e.img += 8*random.randint(0,3)
         self.imageCodeTable = {}
 
         self.GameState = 0  # 0: 게임중, 1: 게임오버 2: 게임클리어
@@ -394,15 +399,26 @@ class Map:
             data = json.load(f)
         keys = sorted(data.keys())
         for i in range(len(keys)):
-            self.imageCodeTable[str(i + 1)+'0'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA")
-            self.imageCodeTable[str(i + 1)+'1'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(90)
-            self.imageCodeTable[str(i + 1)+'2'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(180)
-            self.imageCodeTable[str(i + 1)+'3'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(270)
+            if len(data[keys[i]]) == 2:
+                self.imageCodeTable[str(i + 1)+'0'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA")
+                self.imageCodeTable[str(i + 1)+'1'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(90)
+                self.imageCodeTable[str(i + 1)+'2'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(180)
+                self.imageCodeTable[str(i + 1)+'3'] = Image.open("sprites/" + keys[i] + ".png").convert("RGBA").rotate(270)
 
-        self.imageCodeTable['p'] = Image.open("src/player.png").convert("RGBA")
+        self.imageCodeTable['player0'] = Image.open("src/player0.png").convert("RGBA")
+        self.imageCodeTable['player1'] = Image.open("src/player1.png").convert("RGBA")
+        self.imageCodeTable['player2'] = Image.open("src/player2.png").convert("RGBA")
+        self.imageCodeTable['player3'] = Image.open("src/player3.png").convert("RGBA")
+        self.imageCodeTable['playerD'] = Image.open("src/playerD.png").convert("RGBA")
+
+        self.imageCodeTable['enemy0'] = Image.open("src/enemy0.png").convert("RGBA")
+        self.imageCodeTable['enemy1'] = Image.open("src/enemy1.png").convert("RGBA")
+        self.imageCodeTable['enemy2'] = Image.open("src/enemy2.png").convert("RGBA")
+        self.imageCodeTable['enemy3'] = Image.open("src/enemy3.png").convert("RGBA")
+        self.imageCodeTable['enemyD'] = Image.open("src/enemyD.png").convert("RGBA")
+
         self.imageCodeTable['h'] = Image.open("src/hook.png").convert("RGBA")
         self.imageCodeTable['d'] = Image.open("src/door.png").convert("RGBA")
-        self.imageCodeTable['e'] = Image.open("src/enemy.png").convert("RGBA")
 
     def getView(self):
         view = self.bg.copy()
@@ -436,7 +452,10 @@ class Map:
                     cameraPos[1] + 240 or enemy.pos[1] + enemy.size[1] < cameraPos[1]:
                 pass
             else:
-                enemyImg = self.imageCodeTable[enemy.image].copy()
+                imgCode = enemy.image + str((enemy.img // 8) % 4) if not enemy.isDead else 'enemyD'
+                enemyImg = self.imageCodeTable[
+                    imgCode
+                ].copy()
                 if enemy.heading == -1:
                     enemyImg = ImageOps.mirror(enemyImg)
                 view.paste(enemyImg,
@@ -445,7 +464,9 @@ class Map:
 
 
         # 플레이어
-        playerImg = self.imageCodeTable[self.player.image].copy() if self.player.isAttacked == 0 else self.imageCodeTable['e'].copy()
+        playerImg = self.imageCodeTable[
+            self.player.image + str( (self.player.img//8)%4 )
+        ].copy() if self.player.isAttacked == 0 else self.imageCodeTable['playerD'].copy()
         if self.player.heading == -1:
             playerImg = ImageOps.mirror(playerImg)
 
@@ -493,6 +514,16 @@ class Map:
             enemy.move(self.blockList)
         self.player.hook.move(self.blockList, self.enemyList, self.player)
 
+        if self.player.vel[0] != 0 and not self.player.isJumping:
+            self.player.img += 1
+        elif self.player.isJumping:
+            self.player.img = 8
+        else:
+            self.player.img = 0
+
+        for enemy in self.enemyList:
+            enemy.img += 1
+
         return self.door.isOpened
 
     def draw(self, screen):
@@ -537,6 +568,7 @@ def MapPlay_(map_file_name, screen, clock):  # Exit: 0, Restart: -1, win: ticks
         map.step()
         running = not map.step()
         map.draw(screen)
+
         pg.display.flip()
         clock.tick(15)
 
@@ -579,10 +611,6 @@ def GameStart(screen, clock):
             playdata = json.load(f)
     except:
         playdata = {}
-        '''
-        with open("playdata.json", "w", encoding='utf8') as f:
-            json.dump(playdata, f, ensure_ascii=False, indent="\t")
-        '''
         IntroMP4(screen, clock)
 
     # 배경 이미지 로딩
@@ -609,7 +637,7 @@ def GameStart(screen, clock):
                         result = MapPlay(0, screen, clock)
                         if result > 0:
                             playdata["clear"] = 1
-                            playdata["time"] = result
+                            playdata["time"] = min(playdata["time"],result)
                             with open("playdata.json", "w", encoding='utf8') as f:
                                 json.dump(playdata, f, ensure_ascii=False, indent="\t")
                     else:

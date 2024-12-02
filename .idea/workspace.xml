@@ -4,113 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c519e5d4-5d11-4597-9719-54272a29aa72" name="Changes" comment="11.21 v2 완성">
-      <change afterPath="$PROJECT_DIR$/introMp4/0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/27.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/29.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/31.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/35.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/37.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/39.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/41.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/42.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/43.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/44.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/52.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/53.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/54.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/55.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/56.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/57.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/58.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/59.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/61.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/62.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/63.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/65.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/66.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/67.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/68.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/69.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/70.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/71.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/73.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/74.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/75.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/76.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/introMp4/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spriteToSrc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sprites/sprite_data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/block2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/door.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enemy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/homeBG.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/map0.png" afterDir="false" />
+    <list default="true" id="c519e5d4-5d11-4597-9719-54272a29aa72" name="Changes" comment="v3 11.29">
+      <change afterPath="$PROJECT_DIR$/sprites/Break1End.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break1EndBroken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break1Normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break1NormalBroken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break1Start.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break1StartBroken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break2End.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break2EndBroken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break2Normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break2NormalBroken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break2Start.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break2StartBroken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/Break3Broken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/RayserBigCenter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/RayserBigCorner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/RayserBigSide.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprites/RayserSmall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enemy0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enemy1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enemy2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enemy3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enemyD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/player0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/player1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/player2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/player3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/playerD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/EmbededSW.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EmbededSW.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/V1.0/GameClass.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V1.0/map0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V1.0/sub.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V1.0/t1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V1.0/t2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V1.0/test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V1.0/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V2.0/GameClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/V2.0/block1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/block1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/V2.0/block3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/block3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/V2.0/enemy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/V2.0/hook.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/hook.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/V2.0/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/map/0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/V2.0/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/player.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/V2.0/sub.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sub.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Camera.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Entity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Map.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Player.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameClass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map/0.json" beforeDir="false" afterPath="$PROJECT_DIR$/map/0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spriteToSrc.py" beforeDir="false" afterPath="$PROJECT_DIR$/spriteToSrc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/sprite.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/sprite_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/sprite_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/map0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/map0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +104,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -183,8 +115,8 @@
       <recent name="C:\Users\user\PycharmProjects\EmbededSW\V2.0" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user\PycharmProjects\EmbededSW\sprites" />
       <recent name="C:\Users\user\PycharmProjects\EmbededSW\src" />
+      <recent name="C:\Users\user\PycharmProjects\EmbededSW\sprites" />
       <recent name="C:\Users\user\PycharmProjects\EmbededSW" />
       <recent name="C:\Users\user\PycharmProjects\EmbededSW\map" />
       <recent name="C:\Users\user\PycharmProjects\EmbededSW\V2.0" />
@@ -309,8 +241,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.GameClass (1)" />
         <item itemvalue="Python.spriteToSrc" />
+        <item itemvalue="Python.GameClass (1)" />
         <item itemvalue="Python.sub" />
         <item itemvalue="Python.test" />
       </list>
@@ -325,6 +257,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\user\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c519e5d4-5d11-4597-9719-54272a29aa72" name="Changes" comment="" />
@@ -337,7 +272,8 @@
       <workItem from="1731472733410" duration="898000" />
       <workItem from="1731473658534" duration="6410000" />
       <workItem from="1732164788717" duration="22284000" />
-      <workItem from="1732787101905" duration="11757000" />
+      <workItem from="1732787101905" duration="23167000" />
+      <workItem from="1733131706098" duration="1424000" />
     </task>
     <task id="LOCAL-00001" summary="Github test">
       <option name="closed" value="true" />
@@ -379,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732186560500</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="v3 11.29">
+      <option name="closed" value="true" />
+      <created>1732867472056</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732867472056</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,14 +335,15 @@
     <MESSAGE value="11.01" />
     <MESSAGE value="11.7" />
     <MESSAGE value="11.21 v2 완성" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.21 v2 완성" />
+    <MESSAGE value="v3 11.29" />
+    <option name="LAST_COMMIT_MESSAGE" value="v3 11.29" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EmbededSW$test.coverage" NAME="test 커버리지 결과" MODIFIED="1732370177232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EmbededSW$sub__1_.coverage" NAME="sub (1) 커버리지 결과" MODIFIED="1732186217117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V2.0" />
     <SUITE FILE_PATH="coverage/EmbededSW$GameClass.coverage" NAME="GameClass 커버리지 결과" MODIFIED="1732186420965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V2.0" />
-    <SUITE FILE_PATH="coverage/EmbededSW$spriteToSrc.coverage" NAME="spriteToSrc 커버리지 결과" MODIFIED="1732787977894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/EmbededSW$main.coverage" NAME="main 커버리지 결과" MODIFIED="1732864888426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/EmbededSW$GameClass__1_.coverage" NAME="GameClass (1) 커버리지 결과" MODIFIED="1732858063011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EmbededSW$spriteToSrc.coverage" NAME="spriteToSrc 커버리지 결과" MODIFIED="1732877983250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EmbededSW$main.coverage" NAME="main 커버리지 결과" MODIFIED="1732959920316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EmbededSW$GameClass__1_.coverage" NAME="GameClass (1) 커버리지 결과" MODIFIED="1732876164985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

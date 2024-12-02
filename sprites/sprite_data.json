@@ -19,6 +19,18 @@
     "RayserSmall": [7,1],
     "RayserBigCorner": [0,2],
     "RayserBigSide": [1,2],
-    "RayserBigCenter": [1,3]
+    "RayserBigCenter": [1,3],
+
+    "player0": [3,4,9,23],
+    "player1": [4,4,9,23],
+    "player2": [5,4,9,23],
+    "player3": [6,4,9,23],
+    "playerD": [7,4,9,23],
+
+    "enemy0": [3,2,13,24],
+    "enemy1": [4,2,13,24],
+    "enemy2": [5,2,13,24],
+    "enemy3": [6,2,13,24],
+    "enemyD": [7,2,13,24]
 
 }
