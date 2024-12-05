@@ -599,9 +599,6 @@ def MapPlay(map_file_name):  # Exit: 0, Restart: -1, win: ticks
     while running:
         ticks += 1
 
-        map.step()
-        map.step()
-        map.step()
         running = not map.step()
         map.draw()
 
