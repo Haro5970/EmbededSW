@@ -671,7 +671,7 @@ def GameStart():
                     with open("playdata.json", "w", encoding='utf8') as f:
                         json.dump(playdata, f, ensure_ascii=False, indent="\t")
                 else:
-                    playdata["map"] = (playdata["map"] + 1) // 2 # 현재 0번과 1번 맵만 제작
+                    playdata["map"] = (playdata["map"] + 2) // 2 # 현재 0번과 1번 맵만 제작
                     playdata["time"] = min(playdata["time"], result)
                     with open("playdata.json", "w", encoding='utf8') as f:
                         json.dump(playdata, f, ensure_ascii=False, indent="\t")
