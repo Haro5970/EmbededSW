@@ -376,8 +376,10 @@ class Enemy(Entity):
                     self.heading = -1
 
                 self.vel[0] = self.heading * self.speed[0]
-        else:
+        elif self.targetingFunc == 1:
             self.vel[0] = self.heading * self.speed[0]
+        else:
+            self.vel[0] = 0
 
 
 class Map:
@@ -660,7 +662,7 @@ def GameStart():
         if isPlaying:
             # 게임 시작
             print("Game Start")
-            result = MapPlay("map/" + str(0) + ".json")
+            result = MapPlay("map/" + str(1) + ".json")
             if result > 0:
                 print("Game Clear - " + str(result))
                 if playdata['time'] == -1:  # 첫 플레이
