@@ -525,7 +525,7 @@ class Map:
 
         view = view.crop((int(cameraPos[0]), int(cameraPos[1]), int(cameraPos[0] + 240), int(cameraPos[1] + 240)))
         if view.size != (240, 240):
-            print(cameraPos)
+            print("!!! ViewSize:",view.size)
         return view
 
     def inputKey(self):
@@ -578,7 +578,7 @@ class Map:
         try:
             disp.image(view)
         except:
-            print(view.size)
+            print("!!!ViewSize:",view.size)
 
 
 def MapPlay(map_file_name):  # Exit: 0, Restart: -1, win: ticks
