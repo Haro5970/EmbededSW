@@ -626,7 +626,7 @@ def GameStart():
         with open("playdata.json", "r", encoding='utf8') as f:
             playdata = json.load(f)
     except:
-        playdata = {'time': -1}
+        playdata = {'time': -1, 'map': 0}
         IntroMP4()
 
     # 배경 이미지 로딩
@@ -662,7 +662,7 @@ def GameStart():
         if isPlaying:
             # 게임 시작
             print("Game Start")
-            result = MapPlay("map/" + str(1) + ".json")
+            result = MapPlay("map/" + str(playdata['map']) + ".json")
             if result > 0:
                 print("Game Clear - " + str(result))
                 if playdata['time'] == -1:  # 첫 플레이
@@ -671,7 +671,7 @@ def GameStart():
                     with open("playdata.json", "w", encoding='utf8') as f:
                         json.dump(playdata, f, ensure_ascii=False, indent="\t")
                 else:
-                    playdata["clear"] = 1
+                    playdata["map"] = (playdata["map"] + 1) // 2 # 현재 0번과 1번 맵만 제작
                     playdata["time"] = min(playdata["time"], result)
                     with open("playdata.json", "w", encoding='utf8') as f:
                         json.dump(playdata, f, ensure_ascii=False, indent="\t")
