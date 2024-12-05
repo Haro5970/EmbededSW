@@ -624,12 +624,12 @@ def GameStart():
         with open("playdata.json", "r", encoding='utf8') as f:
             playdata = json.load(f)
     except:
-        playdata = {}
+        playdata = {'time': -1}
         IntroMP4()
 
     # 배경 이미지 로딩
     bgSrc = Image.open("src/homeBG.png").convert("RGB")
-
+    font = ImageFont.truetype("DejaVuSans-Bold.ttf", 14)
     cnt = 0
     btnState = 0  # 0: play, 1: exit
 
@@ -662,7 +662,8 @@ def GameStart():
             print("Game Start")
             result = MapPlay("map/" + str(0) + ".json")
             if result > 0:
-                if playdata == {}:  # 첫 플레이
+                print("Game Clear - " + str(result))
+                if playdata['time'] == -1:  # 첫 플레이
                     playdata["clear"] = 1
                     playdata["time"] = result
                     with open("playdata.json", "w", encoding='utf8') as f:
@@ -678,6 +679,16 @@ def GameStart():
         bg = bgSrc.copy()
         draw = ImageDraw.Draw(bg)
 
+        high_score = playdata['time']
+        if high_score == -1:
+            txt = "Welcome to training."
+        else:
+            txt = "Your record is " + str((int)(high_score / 8 * 10) / 10) + " seconds."
+
+        txtBox = draw.textbbox((0, 0), txt, font=font)
+        center = (120 - (txtBox[2] - txtBox[0]) / 2, 216)
+
+        draw.text(center, txt, font=font, fill=(255, 255, 255))
         # 버튼 그리기
         if cnt % 5 != 0:
             if btnState == 0:
@@ -689,6 +700,9 @@ def GameStart():
 
         cnt += 1
         time.sleep(0.01)
+
+    img = Image.new("RGB", (240, 240), (0, 0, 0))
+    disp.image(img)
 
 
 def IntroMP4():

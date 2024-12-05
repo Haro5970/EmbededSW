@@ -7,7 +7,6 @@
     <list default="true" id="c519e5d4-5d11-4597-9719-54272a29aa72" name="Changes" comment="v3 12.02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="083b97536e8ba61c061b84bf789bbeb8d74dfdf5" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -205,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.spriteToSrc" />
-        <item itemvalue="Python.GameClass (1)" />
-        <item itemvalue="Python.sub" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.sub" />
+        <item itemvalue="Python.spriteToSrc" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.GameClass (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -327,6 +331,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Github test" />
@@ -342,7 +357,7 @@
     <SUITE FILE_PATH="coverage/EmbededSW$sub__1_.coverage" NAME="sub (1) 커버리지 결과" MODIFIED="1732186217117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V2.0" />
     <SUITE FILE_PATH="coverage/EmbededSW$GameClass.coverage" NAME="GameClass 커버리지 결과" MODIFIED="1732186420965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V2.0" />
     <SUITE FILE_PATH="coverage/EmbededSW$spriteToSrc.coverage" NAME="spriteToSrc 커버리지 결과" MODIFIED="1732877983250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/EmbededSW$main.coverage" NAME="main 커버리지 결과" MODIFIED="1732959920316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EmbededSW$main.coverage" NAME="main 커버리지 결과" MODIFIED="1733414287710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EmbededSW$GameClass__1_.coverage" NAME="GameClass (1) 커버리지 결과" MODIFIED="1732876164985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
