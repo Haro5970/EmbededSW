@@ -38,6 +38,11 @@ button_U = Button(17)
 button_D = Button(22)
 button_C = Button(4)
 
+# 백라이트 켜기
+backlight = DigitalInOut(board.D26)
+backlight.switch_to_output()
+backlight.value = True
+
 
 class Entity:
     def __init__(self, pos, size, img_code):
